@@ -41,7 +41,7 @@ To install the Study Group Management System, follow these steps:
 To run the application, execute the following command:
 
 ```
-python3 cli.py
+python3 lib/cli.py
 ```
 
 The application will display a menu with options to perform various operations on study groups, subjects, and study sessions.
