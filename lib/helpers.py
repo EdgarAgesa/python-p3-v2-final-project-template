@@ -53,9 +53,13 @@ def update_study_group():
     study_group_id = int(input("Enter the study_group_ID of the study group to update: "))
     new_name = input("Enter the new name for the study group: ")
     study_group = StudyGroup()
-    study_group.update(study_group_id, new_name)
+    result = study_group.update(study_group_id, new_name)
     study_group.close()
-    print(f"Study group with ID {study_group_id} updated to {new_name}.")
+
+    if result:
+        print(f"Study group with ID {study_group_id} updated to {new_name}.")
+    else:
+        print(f"Study group with ID {study_group_id} does not exist.")
 
 def delete_study_group():
     study_group_id = int(input("Enter the study_group_ID of the study group to delete: "))

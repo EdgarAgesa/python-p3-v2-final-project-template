@@ -60,20 +60,24 @@ def main():
 def menu():
     print("Please select an option:")
     print("0. Exit the program")
+    print("=======GROUP TABLE========")
     print("1. Create a new group")
     print("2. Search study_group by ID")
     print("3. List groups")
     print("4. Update a study_group")
     print("5. Delete a study group")
+    print("=========SUBJECT TABLE===========")
     print("6. Create a subject")
     print("7. Add subjects to the group")
-    print("8. Check if subject exists")
+    print("8. Check subject by ID")
     print("9. Change a subject name")
     print("10. Delete a subject ")
+    print("===========SCHEDULE TABLE============")
     print("11. Create a schedule")
     print("12. Search sessions by id")
     print("13. Update a study session")
     print("14. Delete a study session")
+    print("=======================")
 
 
 if __name__ == "__main__":
