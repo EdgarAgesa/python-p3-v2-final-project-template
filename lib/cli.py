@@ -15,12 +15,7 @@ from helpers import (
     create_schedule,
     display_sessions_by_id,
     update_study_session,
-    delete_study_session
-    # add_subject_to_group,
-    # remove_subject_from_group,
-    # list_subjects,
-    # list_subjects_in_group,
-    
+    delete_study_session  
 )
 
 
@@ -79,7 +74,6 @@ def menu():
     print("12. Search sessions by id")
     print("13. Update a study session")
     print("14. Delete a study session")
-    # print("6. Add a subject")
 
 
 if __name__ == "__main__":

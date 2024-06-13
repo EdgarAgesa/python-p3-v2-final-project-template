@@ -156,9 +156,7 @@ def display_sessions_by_id():
         print(f"Study sessions for ID {id}:")
         for row in result:
             print(f"ID: {row[0]}, Date: {row[1]}, Time: {row[2]}, Study Group ID: {row[3]}")
-    else:
-        print(f"No study sessions found for ID {id}.")
-
+    
 def update_study_session():
     session_id = int(input("Enter the ID of the study session to change: "))
     date = input("Enter the new date: ")
