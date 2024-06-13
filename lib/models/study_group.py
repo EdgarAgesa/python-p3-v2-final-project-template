@@ -13,9 +13,9 @@ class StudyGroup:
         self.connection.commit()
         return self.cursor.lastrowid
 
-    def read(self, name):
-        query = "SELECT * FROM study_groups WHERE name =?"
-        self.cursor.execute(query, (name,))
+    def read_id(self, id):
+        query = "SELECT * FROM study_groups WHERE id =?"
+        self.cursor.execute(query, (id,))
         study_group_data = self.cursor.fetchone()
 
         if study_group_data:
@@ -26,9 +26,9 @@ class StudyGroup:
 
         return study_group_data
     
-    def read_by_id(self, id):
-        query = "SELECT * FROM study_groups WHERE id =?"
-        self.cursor.execute(query, (id,))
+    def read_by_name(self, name):
+        query = "SELECT * FROM study_groups WHERE name =?"
+        self.cursor.execute(query, (name,))
         study_group_data = self.cursor.fetchone()
         return study_group_data
 

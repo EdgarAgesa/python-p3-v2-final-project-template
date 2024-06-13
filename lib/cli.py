@@ -61,7 +61,7 @@ def menu():
     print("Please select an option:")
     print("0. Exit the program")
     print("1. Create a new group")
-    print("2. Search study_group by name")
+    print("2. Search study_group by ID")
     print("3. List groups")
     print("4. Update a study_group")
     print("5. Delete a study group")

@@ -16,17 +16,15 @@ def create_study_group():
 
 
 def read_study_group():
-    name = input("Enter the name of the study group: ")
+    id = int(input("Enter the study_group_ID: "))
     study_group = StudyGroup()
-    result = study_group.read(name)
+    result = study_group.read_id(id)
     if result:
         study_group_id = result[0]
         print(f"Study group found: ID - {study_group_id}, Name - {result[1]}")
         print("Subjects in the study group:")
         for subject in study_group.subjects:
             print(f"ID - {subject[0]}, Name - {subject[1]}")
-        else:
-            print("Subjects not in the study group")
     else:
         print("Study group not found.")
 def list_groups():
@@ -62,7 +60,7 @@ def update_study_group():
 def delete_study_group():
     study_group_id = int(input("Enter the study_group_ID of the study group to delete: "))
     study_group = StudyGroup()
-    result = study_group.read_by_id(study_group_id)
+    result = study_group.read_id(study_group_id)
 
     if result:
         study_group.delete_group(study_group_id)
@@ -80,17 +78,17 @@ def add_subject():
     print(f"Subject {name} created to study_group {study_group_id}!")
 
 def add_subject_to_study_group():
-    study_group_name = input("Enter the name of the study group: ")
+    study_group_id =int(input("Enter the study_group_ID: "))
     subject_id = input("Enter the ID of the subject: ")
 
     subject = Subject()
-    study_group = StudyGroup().read(study_group_name)
+    study_group = StudyGroup().read_id(study_group_id)
     if study_group:
         subject_result = Subject().read_by_id(subject_id)
         if subject_result:
             subject_name = subject_result[1]
             subject.assign_to_study_group(subject_id, study_group[0])
-            print(f"Subject '{subject_name}' (ID: {subject_id}) added to study group '{study_group_name}'.")
+            print(f"Subject '{subject_name}' (ID: {subject_id}) added to study group '{study_group_id}'.")
         else:
             print(f"Subject with ID '{subject_id}' not found.")
     else:
@@ -177,7 +175,7 @@ def delete_study_session():
     session_id = int(input("Enter the ID of the study session to delete: "))
 
     schedule = Schedule()
-    result = schedule.show_by_id(session_id)
+    result = schedule.delete_study_session(session_id)
 
     if result:
         schedule.delete_study_session(session_id)
