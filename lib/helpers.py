@@ -178,8 +178,5 @@ def delete_study_session():
     result = schedule.delete_study_session(session_id)
 
     if result:
-        schedule.delete_study_session(session_id)
         schedule.close()
-        print(f"Study session with ID {session_id} deleted successfully.")
-    else:
-        print(f"No study session found for ID {session_id}.")
+    print(f"Study session with ID {session_id} deleted successfully.")
